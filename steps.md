@@ -111,6 +111,7 @@ To make those functions accessible globally on the strapi server, we saved it to
 
 We'll use 
 ### Setup Flutter Application
-Since we will be using flutter on the frontend, We have to install two pub packages, firebase_messaging and dio. We'll use dio to send the messaging token to the server. 
+Since we will be using flutter on the frontend, We have to install two pub packages, firebase_messaging and dio. We'll use dio to send the messaging token to the server. Futhermore we will use a state management library.
 
 ## Install FlutterFire https://firebase.google.com/docs/flutter/setup?platform=android
+
