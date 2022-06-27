@@ -13,7 +13,11 @@ module.exports = {
    *
    * This gives you an opportunity to extend code.
    */
-  register(/*{ strapi }*/) { },
+   register({ strapi }) {
+
+
+    
+   },
 
   /**
    * An asynchronous bootstrap function that runs before
@@ -26,6 +30,8 @@ module.exports = {
 
 
 
+    //console.log(strapi.plugin("users-permissions").routes['content-api'].routes);
+    //console.log(strapi.plugin("users-permissions").controllers.auth);
     var firebase = admin.initializeApp({
       credential: admin.credential.cert(serviceAccount),
     });
