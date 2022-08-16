@@ -13,7 +13,19 @@ module.exports = createCoreService('api::like.like', ({ strapi }) => ({
     createLike(params) {
 
 
-        return super.create(params);
+        return strapi.service('api::like.like').create({
+            data: {
+
+
+                quote: params.quote,
+                owner: params.owner,
+                publishedAt: new Date()
+
+            }
+        });
+
+
+
 
     }
 }));

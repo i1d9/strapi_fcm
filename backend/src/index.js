@@ -30,8 +30,7 @@ module.exports = {
 
 
 
-    //console.log(strapi.plugin("users-permissions").routes['content-api'].routes);
-    //console.log(strapi.plugin("users-permissions").controllers.auth);
+    
     var firebase = admin.initializeApp({
       credential: admin.credential.cert(serviceAccount),
     });

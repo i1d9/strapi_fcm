@@ -4,7 +4,8 @@
   "info": {
     "singularName": "like",
     "pluralName": "likes",
-    "displayName": "Like"
+    "displayName": "Like",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -20,8 +21,7 @@
     "owner": {
       "type": "relation",
       "relation": "oneToOne",
-      "target": "plugin::users-permissions.user",
-      "mappedBy": "like"
+      "target": "plugin::users-permissions.user"
     }
   }
 }

@@ -69,12 +69,6 @@
       "target": "api::quote.quote",
       "mappedBy": "owner"
     },
-    "like": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::like.like",
-      "inversedBy": "owner"
-    },
     "fcm": {
       "type": "text"
     }

@@ -19,6 +19,7 @@ module.exports = createCoreController('api::quote.quote', ({ strapi }) => ({
         //Get Quotes with loaded relations
         let entities = await strapi.service('api::quote.quote').loadQuotes();
         entities = entities.map((entity) => {
+            
             //Check if the authenicated User has liked the quote
             var result = entity.likes.find(like => like.owner.id === ctx.state.auth.credentials.id);
             return { ...entity, liked: result ? true : false }
