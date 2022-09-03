@@ -1,10 +1,6 @@
 'use strict';
 const { initializeApp } = require('firebase-admin/app');
-
-
 var admin = require("firebase-admin");
-
-
 var serviceAccount = require("./quotes.json");
 module.exports = {
   /**
@@ -14,9 +10,6 @@ module.exports = {
    * This gives you an opportunity to extend code.
    */
    register({ strapi }) {
-
-
-    
    },
 
   /**
@@ -28,9 +21,6 @@ module.exports = {
    */
   bootstrap({ strapi }) {
 
-
-
-    
     var firebase = admin.initializeApp({
       credential: admin.credential.cert(serviceAccount),
     });
@@ -40,15 +30,12 @@ module.exports = {
     let messaging = firebase.messaging();
 
 
-
-
     let sendNotification = (fcm, data) => {
       //https://fcm.googleapis.com/fcm/send
       let message = {
         ...data,
         token: fcm
       }
-
       messaging.send(message).then((res) => {
         console.log(res);
       }).catch((error) => {
@@ -57,12 +44,10 @@ module.exports = {
     }
 
     let sendNotificationToTopic = (topic_name) => {
-
       let message = {
         ...data,
         topic: topic_name
       }
-
       messaging.send(message).then((res) => {
         console.log(res);
       }).catch((error) => {
@@ -76,7 +61,6 @@ module.exports = {
       }).catch((error) => {
         console.log(error);
       });
-
     }
 
     strapi.notification = {
@@ -84,7 +68,5 @@ module.exports = {
       sendNotificationToTopic,
       sendNotification
     }
-
-
   },
 };
