@@ -1,5 +1,5 @@
 'use strict';
-const { initializeApp } = require('firebase-admin/app');
+
 var admin = require("firebase-admin");
 var serviceAccount = require("./quotes.json");
 module.exports = {
@@ -9,9 +9,7 @@ module.exports = {
    *
    * This gives you an opportunity to extend code.
    */
-   register({ strapi }) {
-   },
-
+  register({ strapi }) { },
   /**
    * An asynchronous bootstrap function that runs before
    * your application gets started.
@@ -21,7 +19,7 @@ module.exports = {
    */
   bootstrap({ strapi }) {
 
-    var firebase = admin.initializeApp({
+    let firebase = admin.initializeApp({
       credential: admin.credential.cert(serviceAccount),
     });
 
